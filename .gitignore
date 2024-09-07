@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Hugging Face Transformers
+# Cache directories
+.cache/
+datasets/
+
+# PyTorch
+*.pt
+*.pth
+
+# Model save directory
+# Ignore the folder where you save fine-tuned models
+finetuned_distilbert/
+
+# Log files
+*.log
+logs/
+
+# Output directories
+results/
+output_dir/
+
+# MacOS
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
