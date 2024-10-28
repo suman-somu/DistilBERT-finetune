@@ -1,18 +1,18 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-# Load the fine-tuned model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained("./results")
-model = AutoModelForSequenceClassification.from_pretrained("./results")
+# Load the base DistilBERT model and tokenizer
+tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+base_model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased")
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-model.to(device)
+base_model.to(device)
 
-def run_inference(text):
+def run_base_inference(text):
     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding="max_length").to(device)
     
     with torch.no_grad():
-        outputs = model(**inputs)
+        outputs = base_model(**inputs)
     
     predictions = outputs.logits.argmax(dim=-1)
     return predictions.item()
@@ -31,6 +31,6 @@ texts = [
 ]
 
 for text in texts:
-    prediction = run_inference(text)
+    prediction = run_base_inference(text)
     sentiment = "Positive" if prediction == 1 else "Negative"
     print(f"Input: {text}\nPredicted Sentiment: {sentiment}\n")
