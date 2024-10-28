@@ -1,7 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-# Load the base DistilBERT model and tokenizer
 tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 base_model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased")
 

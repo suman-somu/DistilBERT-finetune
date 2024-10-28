@@ -42,6 +42,5 @@ trainer = Trainer(
 trainer.train()
 trainer.evaluate()
 
-# Save the fine-tuned model and tokenizer
 model.save_pretrained("./results")
 tokenizer.save_pretrained("./results")

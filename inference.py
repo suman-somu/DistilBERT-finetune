@@ -1,7 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-# Load the fine-tuned model and tokenizer
 tokenizer = AutoTokenizer.from_pretrained("./results")
 model = AutoModelForSequenceClassification.from_pretrained("./results")
 
