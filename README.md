@@ -2,6 +2,9 @@
 ---
 
 # Fine-Tuning and Inference with Hugging Face Transformers
+|![image](https://github.com/user-attachments/assets/91df679f-eae9-4a31-a854-2df9f10df2a2) | ![image](https://github.com/user-attachments/assets/ebc8491f-bec8-4eed-a612-c676d74e1487) |
+|------------|------------|
+
 
 This project demonstrates how to fine-tune a pre-trained DistilBERT model on a sentiment analysis task using the IMDb dataset, and how to run inference on new data using the fine-tuned model. The project uses the Hugging Face `transformers` library for model fine-tuning and inference.
 
