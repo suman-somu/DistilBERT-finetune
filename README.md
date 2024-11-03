@@ -10,13 +10,12 @@ This project demonstrates how to fine-tune a pre-trained DistilBERT model on a s
 
 ## Project Structure
 ```
-├── finetuned_distilbert/     # Directory for saving the fine-tuned model
-├── logs/                     # Directory for saving training logs
-├── results/                  # Directory for saving training results
-├── main.py                   # Main script for fine-tuning the model
-├── inference.py              # Script for running inference with the fine-tuned model
-├── .gitignore                # File for excluding unnecessary files from Git
-└── README.md                 # Project documentation
+├── results/                  # Directory for saving finetuned model
+├── finetune.py               # Main script for fine-tuning the model
+├── inference.py              # running inference with the fine-tuned model
+├── infer_base.py             # running inference with the base model
+├── .gitignore                
+└── README.md                 
 ```
 
 ## Prerequisites
@@ -37,15 +36,15 @@ pip install torch transformers datasets
 
 ### 1. Fine-Tune the Model
 
-Use the `main.py` script to fine-tune the DistilBERT model on the IMDb dataset. The script fine-tunes the model and saves it under the `./finetuned_distilbert` directory.
+Use the `finetune.py` script to fine-tune the DistilBERT model on the IMDb dataset. The script fine-tunes the model and saves it under the `./results` directory.
 
 ```bash
-python main.py
+python finetune.py
 ```
 
 ### 2. Save the Fine-Tuned Model
 
-The fine-tuned model is saved automatically at the end of training in the `finetuned_distilbert/` directory. Ensure this directory is not included in version control (handled via `.gitignore`).
+The fine-tuned model is saved automatically at the end of training in the `results/` directory.
 
 ### 3. Run Inference
 
@@ -67,22 +66,18 @@ Predicted Sentiment: Negative
 
 ## Project Files
 
-### 1. `main.py`
+### 1. `finetune.py`
 
 - **Description**: This script fine-tunes a pre-trained DistilBERT model on the IMDb dataset. It tokenizes the dataset, configures the model and trainer, and saves the fine-tuned model at the end of training.
 
 ### 2. `inference.py`
 
-- **Description**: This script loads the fine-tuned model and runs inference on new text inputs. It predicts whether the sentiment is positive or negative.
+- **Description**: This script loads the fine-tuned model and runs inference on sample text inputs. 
 
-### 3. `.gitignore`
 
-- **Description**: This file ensures that unnecessary files like caches, logs, virtual environments, and model files are not added to version control.
+### 3. `infer_base.py`
 
-## Additional Resources
-
-- [Hugging Face Transformers Documentation](https://huggingface.co/docs/transformers/)
-- [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)
+- **Description**: This script loads the base DistilBERT model and runs inference on sample text inputs. 
 
 ## License
 
